@@ -13,7 +13,6 @@ const Router = express.Router;
 const upload = multer({ dest: "tmp/csv/" });
 
 const router = new Router();
-app.use(Express.static(path.join(__dirname, "./client/build")));
 
 //...
 app.use("/upload-csv", router);
@@ -28,7 +27,7 @@ app.use(carRoutes);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
 
