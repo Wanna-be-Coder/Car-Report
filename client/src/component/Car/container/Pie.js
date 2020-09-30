@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactSvgPieChart from "react-svg-piechart";
 import AlertBox from "../dummy/AlertBox";
+import { List, ListItem } from "@material-ui/core";
 
 function Pie({ data }) {
   const [state, setState] = useState({
@@ -10,6 +11,12 @@ function Pie({ data }) {
     message: "",
     color: "",
   });
+
+  const flexContainer = {
+    display: "flex",
+    flexDirection: "row",
+    padding: 0,
+  };
 
   const { vertical, horizontal, open, message, color } = state;
 
@@ -36,6 +43,36 @@ function Pie({ data }) {
           }
         }}
       />
+      {data.map((data, index) => (
+        <List style={flexContainer}>
+          {index % 2 === 0 ? (
+            <ListItem primaryText='foo1' secondaryText='bar1'>
+              <span
+                style={{
+                  height: "15px",
+                  width: "15px",
+                  backgroundColor: data.color,
+                  borderRadius: "50%",
+                }}
+              ></span>
+              {data.title}
+            </ListItem>
+          ) : (
+            <ListItem primaryText='foo2' secondaryText='bar2'>
+              <span
+                style={{
+                  height: "15px",
+                  width: "15px",
+                  backgroundColor: data.color,
+                  borderRadius: "50%",
+                }}
+              ></span>
+              {data.title}
+            </ListItem>
+          )}
+        </List>
+      ))}
+
       <AlertBox
         data={{
           vertical,
@@ -46,7 +83,6 @@ function Pie({ data }) {
           handleClose,
         }}
       />
-      ;
     </div>
   );
 }
