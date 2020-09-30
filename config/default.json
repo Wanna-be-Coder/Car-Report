@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://saminsharar2:samelo123@contactproject-ag7l5.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "YoloNoob"
+}
