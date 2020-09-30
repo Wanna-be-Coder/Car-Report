@@ -10,10 +10,10 @@ Open [http://localhost:5000] you can use post man to check it's entire functiona
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### To run the client in dev mode cd into the client and use `npm start`
+### To run the client in dev mode cd into the client and use `npm start` or just run `npm run client`
 
 Runs the client in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000] to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
